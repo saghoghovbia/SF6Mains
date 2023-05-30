@@ -19,7 +19,7 @@ public class FighterController {
         this.fighterRepository = fighterRepo;
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public Iterable<Fighter> allFighters(){return this.fighterRepository.findAll();}
 
     @GetMapping("/{id}")
@@ -36,7 +36,7 @@ public class FighterController {
         return fighter;
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public Fighter addNewFighter(@RequestBody Fighter fighter){
         this.fighterRepository.save(fighter);
 
